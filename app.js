@@ -2,7 +2,7 @@
 // Azure Function App Base URL
 // ===============================
 const FUNCTION_BASE =
-  "https://face-function-app2025-geh2h9cybcbdbfbx.azurewebsites.net";
+  "https://face-function-app2025-geh2h9cybcbbdfbx.japaneast-01.azurewebsites.net/";
 
 // ===============================
 // 출석 요약 조회 함수
