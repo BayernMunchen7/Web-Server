@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>출석 현황 대시보드</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; }
+    .row { display:flex; gap:12px; align-items:center; flex-wrap: wrap; }
+    .card { border:1px solid #ddd; border-radius:12px; padding:16px; margin-top:16px; }
+    input, button { padding:10px 12px; font-size:14px; }
+    button { cursor:pointer; }
+    pre { background:#111; color:#0f0; padding:12px; border-radius:10px; overflow:auto; }
+    table { width:100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border-bottom: 1px solid #eee; padding: 8px; text-align:left; }
+    small { color:#666; }
+  </style>
+</head>
+<body>
+  <h1>출석 현황 조회</h1>
+  <div class="row">
+    <label>날짜:
+      <input type="date" id="dateInput" />
+    </label>
+    <button id="btnFetch">조회</button>
+    <small id="hint"></small>
+  </div>
+
+  <div class="card" id="summaryCard" style="display:none;">
+    <h2>요약</h2>
+    <div id="summary"></div>
+  </div>
+
+  <div class="card" id="listCard" style="display:none;">
+    <h2>기록</h2>
+    <table id="tbl">
+      <thead>
+        <tr>
+          <th>시간(UTC)</th>
+          <th>학번</th>
+          <th>감지</th>
+          <th>인원</th>
+          <th>이미지</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>디버그</h2>
+    <pre id="raw">(아직 조회 안 함)</pre>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
